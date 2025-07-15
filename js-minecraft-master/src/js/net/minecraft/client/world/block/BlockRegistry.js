@@ -14,7 +14,9 @@ import BlockGlass from "./type/BlockGlass.js";
 import SoundGlass from "./sound/SoundGlass.js";
 import BlockGravel from "./type/BlockGravel.js";
 import BlockCobblestone from "./type/BlockCobblestone.js";
-
+import Blockwhite from "./type/Blockwhite.js";
+import Blockgray from "./type/Blockgray.js";
+import Blockpillar from "./type/Blockpillar.js";
 export class BlockRegistry {
 
     static create() {
@@ -41,5 +43,9 @@ export class BlockRegistry {
         BlockRegistry.WATER = new BlockWater(9, 7);
         BlockRegistry.SAND = new BlockSand(12, 8)
         BlockRegistry.TORCH = new BlockTorch(50, 9)
+        BlockRegistry.WHITE = new Blockwhite(36, 15);
+        BlockRegistry.GRAY = new Blockgray(37, 16);
+        BlockRegistry.PILLAR = new Blockpillar(38, 17);
+
     }
 }

@@ -142,6 +142,7 @@ export default class PlayerEntity extends EntityLiving {
         }
         this.cameraYaw += (speedXZ - this.cameraYaw) * 0.4;
         this.cameraPitch += (speedY - this.cameraPitch) * 0.8;
+
     }
 
     isInWater() {
