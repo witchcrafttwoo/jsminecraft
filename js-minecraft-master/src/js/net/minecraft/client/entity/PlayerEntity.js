@@ -143,6 +143,23 @@ export default class PlayerEntity extends EntityLiving {
         this.cameraYaw += (speedXZ - this.cameraYaw) * 0.4;
         this.cameraPitch += (speedY - this.cameraPitch) * 0.8;
 
+        let bx = Math.floor(this.x);
+        let by = Math.floor(this.y);
+        let bz = Math.floor(this.z);
+
+        let blockId = this.world.getBlockAt(bx, by, bz);
+        let block = Block.getById(blockId);
+
+        if (block && typeof block.isLadder === "function" && block.isLadder()) {
+            if (this.motionY < -0.15) this.motionY = -0.15;
+            if (this.jumping) this.motionY = 0.2;
+            if (this.isSneaking()) this.motionY = -0.1;
+            this.motionX *= 0.2;
+            this.motionZ *= 0.2;
+            this.fallDistance = 0;
+        }
+
+
     }
 
     isInWater() {

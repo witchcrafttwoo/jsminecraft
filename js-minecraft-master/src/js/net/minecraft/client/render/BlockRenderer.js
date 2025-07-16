@@ -54,7 +54,8 @@ export default class BlockRenderer {
         let maxZ = z + boundingBox.maxZ;
 
         // UV Mapping
-        let textureIndex = block.getTextureForFace(face);
+        let data = world ? world.getBlockDataAt(x, y, z) : undefined;
+        let textureIndex = block.getTextureForFace(face, data);
         let minU = (textureIndex % 16) / 16.0;
         let maxU = minU + (16 / 256);
         let minV = Math.floor(textureIndex / 16) / 16.0;

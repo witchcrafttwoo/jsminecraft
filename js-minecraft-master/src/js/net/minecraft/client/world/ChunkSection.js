@@ -88,7 +88,7 @@ export default class ChunkSection {
 
     getBlockDataAt(x, y, z) {
         let index = y << 8 | z << 4 | x;
-        return !this.empty && index in this.blocksData ? this.blocksData[index] : 0;
+        return !this.empty && index in this.blocksData ? this.blocksData[index] : undefined;
     }
 
     setBlockAt(x, y, z, typeId) {
