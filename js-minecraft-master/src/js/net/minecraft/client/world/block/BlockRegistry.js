@@ -19,6 +19,7 @@ import Blockgray from "./type/Blockgray.js";
 import Blockpillar from "./type/Blockpillar.js";
 import BlockLadder from "./type/BlockLadder.js";
 import Blockyellow from "./type/Blockyellow.js";
+import BlockBlackGlass from "./type/BlockBlackGlass.js";
 export class BlockRegistry {
 
     static create() {
@@ -50,6 +51,7 @@ export class BlockRegistry {
         BlockRegistry.PILLAR = new Blockpillar(38, 17);
         BlockRegistry.Ladder = new BlockLadder(39, 19);
         BlockRegistry.YELLOW = new Blockyellow(40, 18);
+        BlockRegistry.BLACKGLASS = new BlockBlackGlass(41,20);
 
     }
 }
